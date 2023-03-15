@@ -4,7 +4,7 @@ import Scenes
 class ShellDirector : Director {
     required init() {
         super.init()
-        enqueueScene(scene:MainScene())
+        enqueueScene(scene:GameScene())
     }
     override func framesPerSecond() -> Int {
         return 60

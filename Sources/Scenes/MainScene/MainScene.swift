@@ -2,15 +2,18 @@ import Scenes
 
 class MainScene : Scene {
 
-    let backgroundLayer = MainBackgroundLayer()
-    let interactionLayer = MainInteractionLayer()
-    let foregroundLayer = MainForegroundLayer()
+    class GenericLayerWrapper : Layer {
+        init(instance: RenderableEntity, registry: String) {
+            super.init(name:"main-\(registry)")
+            insert(entity:instance, at:.back)
+        }
+    }
     
     init() {
         super.init(name:"MainScene")
-        insert(layer:backgroundLayer, at:.back)
-        insert(layer:interactionLayer, at: .inFrontOf(object: backgroundLayer))
-        insert(layer:foregroundLayer, at:.front)
+        insert(layer:GenericLayerWrapper(instance:MainBackground(), registry:"background"), at:.back)
+        insert(layer:GenericLayerWrapper(instance:MainForeground(), registry:"foreground"), at:.front)
+        insert(layer:GenericLayerWrapper(instance:MainInteraction(), registry:"interaction"), at:.front)
     }
 
 }

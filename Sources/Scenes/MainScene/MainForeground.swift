@@ -1,7 +1,7 @@
 import Scenes
 import Igis
 
-class MainBackground : RenderableEntity {
+class MainForeground : RenderableEntity {
     let text : Text
 
     init() {
