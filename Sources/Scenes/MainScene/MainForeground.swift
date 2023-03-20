@@ -6,8 +6,7 @@ class MainForeground : RenderableEntity {
 
     init() {
 
-        text = Text(location:Point(x:50, y:50), text:"This should theoretically be a button.")
-        text.font = "30pt Ariel"
+        text = Text(location:Point(x:50, y:50), text:"AAAAAAAAAAAAAAA")
 
         super.init(name:"main-foreground")
 

@@ -3,7 +3,7 @@ import Igis
 
 class GameBackground : RenderableEntity {
 
-    init() {
+    init(layerInstance: Layer?) {
         super.init(name:"game-background")
     }
 
